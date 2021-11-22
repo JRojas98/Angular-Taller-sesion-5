@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+<br>
+<div class="center">
+    <div class="polaroid">
+        <div class="container">
+            <h1>{{mascota.name}}</h1>
+        </div>
+        <img *ngIf="mascota.imagen else notImagen" src="{{mascota.imagen}}" alt="Error al cargar imagen" style="width:100%">
+
+        <ng-template #notImagen>
+            <img src="/assets/images/notImage.png" alt="#" style="width:70%">
+        </ng-template>
+
+        <div *ngIf="mascota.descripcion" class="container">
+            <h3>{{mascota.descripcion}}</h3>
+        </div>
+
+        <div class="container">
+            <div class="left">
+                <a  (click)= "eliminarMascota(mascota.name)" mat-raised-button color="warn">Eliminar</a>
+            </div>
+            <div class="right">
+                <a  (click)= "volverMascotas()" mat-raised-button class="light-blue accent-2" >Volver</a>
+            </div>
+            <br>
+        </div>
+        <br>
+    </div>
+</div>
