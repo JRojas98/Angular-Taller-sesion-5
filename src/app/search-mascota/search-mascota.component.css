@@ -12,5 +12,6 @@ div.polaroid {
 
 .center{
     display: flex;
+ 
     justify-content: center;
 }
